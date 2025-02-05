@@ -9,7 +9,6 @@ function App() {
     setCount(count + value);
   }
 
-  
   return (
     <div className='App'>
       <h1>Simple Counter</h1>
