@@ -1,32 +1,66 @@
 import './App.css'
-import { useState, createContext } from 'react';
-import Calendar from 'react-calendar'
-import moment from 'moment'
-import "./components/Cal.css"
-import Total from './components/Total'
-import Detail from './components/Detail'
+import {Routes, Route} from "react-router-dom";
+import { useState, useReducer, useRef } from 'react';
+import Home from './pages/home'
+import Edit from './pages/edit'
+import New from './pages/new'
+import Detail from './pages/detail'
 
-export const DateContext = createContext();
+// 임시 데이터 (객체 형태)
+const mockData = [
+  {
+    id : 1,
+    calc : "minus", // 지출
+    kategorie : "food",
+    method : "cash",
+    date : new Date().getTime(),
+    amount : 10000,
+  },
+  {
+    id : 2,
+    calc : "plus", // 수입
+    kategorie : "food",
+    method : "cash",
+    date : new Date().getTime(),
+    amount : 10000,
+  }
+]
+
+function reducer(state, action) {
+  switch(action.type) {
+    case "CREATE":
+      return [...state, action.data] // 나중에 온 게 뒤에 오도록
+  }
+}
 
 function App() {
-  const [value, onChange] = useState(new Date());
+  const [data, dispatch] = useReducer(reducer, mockData);
+  const idRef = useRef(3);
 
-  // 날짜를 포맷팅하여 출력되도록 moment 사용
-  const formattedDate = moment(value).format('YYYY년 MM월 DD일');
-
+  // 새 가계 추가
+  const onCreate = (calc, kategorie, method, date, amount) => {
+    dispatch({
+      type : "CREATE",
+      data : {
+        id : idRef.current++,
+        calc,
+        kategorie,
+        method,
+        date,
+        amount
+      }
+    })
+  }
+  
   return (
-    <div className='App'>
-      <Calendar
-        locale='ko'
-        formatDay={(locale, date) => moment(date).format('D')}
-        onChange={onChange}
-        value={value}
-        />
-      <DateContext.Provider value={formattedDate}>
-        <Total/>
-        <Detail/>
-      </DateContext.Provider>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/new' element={<New/>}/>
+        <Route path='/edit' element={<Edit/>}/>
+        <Route path='detail' element={<Detail/>}/>
+      </Routes>
+    </>
   )
 }
 export default App

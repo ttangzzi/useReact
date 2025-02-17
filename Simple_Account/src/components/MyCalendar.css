@@ -1,5 +1,12 @@
+.MyCalendar {
+  margin-top : 10px;
+  border: 1px solid black;
+  height: 580px;
+  float: left;
+}
+
 .react-calendar {
-  width: 600px;
+  width: 350px;
   max-width: 100%;
   background: white;
   border: none;
@@ -167,5 +174,5 @@
 }
 
 .react-calendar__month-view__days > button {
-  height: 90px;
+  height: 80px;
 }

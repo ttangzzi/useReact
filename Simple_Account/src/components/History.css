@@ -1,0 +1,15 @@
+.History {
+  float: left;
+  width: 331px;
+  height: 300px;
+  border: 1px solid black;
+  margin-top : 10px;
+  margin-left : 15px;
+}
+
+.History .date {
+  width: 100%;
+  padding:10px 0px;
+  font-size: 16px;
+  text-align: center;
+}
