@@ -1,9 +1,9 @@
 import "./Total.css"
 
-const Total = ({formattedDate}) => {
+const Total = ({showDate}) => {
   return(
     <div className="Total">
-      Total
+      {showDate.getFullYear()}년 {showDate.getMonth()+1}월 총 지출
     </div>
   )
 }
