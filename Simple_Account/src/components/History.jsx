@@ -1,10 +1,12 @@
 import "./History.css"
+import ItemList from "./ItemList";
 
 const History = ({selectDate}) => {
   return (
     <div className="History">
       <div className="date">{selectDate.toLocaleDateString()}</div>
-      <div>목록들</div>
+      <ItemList />
+      <button className="createdButton">+</button>
     </div>
   )
 }

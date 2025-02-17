@@ -1,0 +1,30 @@
+.ItemList {
+  padding: 5px 10px 5px 20px;
+  margin-bottom: 7px;
+  background-color: rgb(250, 152, 152);
+  border-radius: 5px;
+  display: flex;
+  flex : 1;
+  justify-content: space-between; /* 아이템 간 간격을 일정하게 유지 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.icon_section .iconName {
+  font-size: 11px;
+}
+
+.calc_section {
+  margin-left:30px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.button_section > button {
+  border:none;
+  margin-left:5px;
+  background : none;
+}
+
+.button_section > button:hover {
+  color:#eee
+}

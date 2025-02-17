@@ -25,6 +25,7 @@ const MyCalendar = () => {
       </div>
       <History selectDate={value}/>
       <Total showDate={activeDate}/>
+      <div style={{clear:"both"}}></div>
     </>
   )
 }

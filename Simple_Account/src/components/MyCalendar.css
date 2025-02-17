@@ -1,6 +1,8 @@
 .MyCalendar {
   margin-top : 10px;
-  border: 1px solid black;
+  padding-right: 5px;
+  border-right: 2px solid #eee;
+  border-radius: 2px;
   height: 580px;
   float: left;
 }
