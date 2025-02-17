@@ -1,7 +1,11 @@
+import Header from "../components/Header"
+import CreateList from "../components/CreateList";
+
 const New = () => {
   return (
-    <div>
-      New
+    <div className="New">
+      <Header text={"왕 간단 가계부"}/>
+      <CreateList/>
     </div>
   )
 }
