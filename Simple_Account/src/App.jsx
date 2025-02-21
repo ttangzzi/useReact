@@ -21,7 +21,7 @@ const mockData = [
     calc: "plus", // 수입
     kategorie: "게임",
     method: "card",
-    date: "2025-02-21",
+    date: "2025-02-20",
     amount: 10000,
   },
 ];

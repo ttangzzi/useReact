@@ -5,11 +5,10 @@ import { useContext } from "react";
 import { AcountStateContext } from "../App";
 
 const dataFilter = (data, selectDate) => {
-  return data.filter((item) =>
-    new Date(selectDate).toLocaleDateString() ===
-    new Date(item.date).toLocaleDateString()
-      ? item.date
-      : null
+  return data.filter(
+    (item) =>
+      new Date(selectDate).toLocaleDateString() ===
+      new Date(item.date).toLocaleDateString()
   );
 };
 
