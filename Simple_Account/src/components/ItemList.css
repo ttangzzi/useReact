@@ -1,12 +1,19 @@
 .ItemList {
   padding: 5px 10px 5px 20px;
   margin-bottom: 7px;
-  background-color: rgb(250, 152, 152);
   border-radius: 5px;
   display: flex;
-  flex : 1;
+  flex: 1;
   justify-content: space-between; /* 아이템 간 간격을 일정하게 유지 */
   align-items: center; /* 수직 중앙 정렬 */
+}
+
+.ItemList_minus {
+  background-color: rgb(255, 155, 155);
+}
+
+.ItemList_plus {
+  background-color: rgb(167, 192, 255);
 }
 
 .icon_section .iconName {
@@ -14,17 +21,17 @@
 }
 
 .calc_section {
-  margin-left:30px;
+  margin-left: 30px;
   font-size: 15px;
   cursor: pointer;
 }
 
 .button_section > button {
-  border:none;
-  margin-left:5px;
-  background : none;
+  border: none;
+  margin-left: 5px;
+  background: none;
 }
 
 .button_section > button:hover {
-  color:#eee
+  color: #eee;
 }

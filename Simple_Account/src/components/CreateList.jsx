@@ -5,6 +5,10 @@ const CreateList = () => {
   return (
     <div className="CreateList">
       <div className="title">가계부 추가하기</div>
+      <div className="dateMenu">
+        <span>날짜 : </span>
+        <input value={mockDate} type="date" />
+      </div>
       <div className="calcMenu">
         <button className="minusButton">지출</button>
         <button className="plusButton">수입</button>
@@ -13,10 +17,6 @@ const CreateList = () => {
         <button>카드</button>
         <button>현금</button>
         <button>계좌이체</button>
-      </div>
-      <div className="dateMenu">
-        <span>날짜 : </span>
-        <input value={mockDate} type="date" />
       </div>
       <div className="kategorieMenu">
         <p>카테고리</p>
