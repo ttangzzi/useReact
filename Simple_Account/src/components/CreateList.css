@@ -1,84 +1,89 @@
 input {
-  outline:none
+  outline: none;
 }
 
 .CreateList {
-  padding : 0 70px;
+  padding: 0 70px;
 }
 
 .CreateList .title {
-  margin-top:5px;
+  margin-top: 5px;
   padding: 13px 0px;
   text-align: center;
   font-size: 17px;
-  border-bottom: 1px solid rgb(236, 236, 236)
+  border-bottom: 1px solid rgb(236, 236, 236);
 }
 
 .calcMenu {
-  display:flex;
-  justify-content: space-between;;
-  gap : 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 .calcMenu > button {
   width: 270px;
   height: 40px;
   margin-top: 30px;
-  border : none;
+  border: none;
   border-radius: 5px;
 }
 
 .minusButton {
-  background-color : rgb(251, 114, 114);
+  background-color: rgb(251, 114, 114);
 }
 
 .plusButton {
-  background-color : rgb(156, 240, 141);
+  background-color: rgb(156, 240, 141);
 }
 
 .methodMenu {
-  display:flex;
-  justify-content: space-between;;
-  gap : 5px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
 }
 
 .methodMenu > button {
   width: 170px;
   height: 40px;
   margin-top: 30px;
-  border : none;
+  border: none;
   border-radius: 5px;
 }
 
+.methodMenu .methodButton {
+  background-color: #333;
+  color: white;
+}
+
 .dateMenu {
-  margin-top : 30px;
-  font-size : 20px;
+  margin-top: 30px;
+  font-size: 20px;
 }
 
 .dateMenu > input {
   font-size: 20px;
-  border : none;
-  border-bottom : 1px solid black;
+  border: none;
+  border-bottom: 1px solid black;
   padding-left: 5px;
 }
 
 .kategorieMenu {
-  margin-top:30px;
-  font-size : 20px;
+  margin-top: 30px;
+  font-size: 20px;
 }
 
 .kategorieMenu > p {
-  margin:0 0 5px 0;
+  margin: 0 0 5px 0;
 }
 
 .kategorieMenu-list > div {
   width: 50px;
   text-align: center;
-  font-size : 30px;
+  font-size: 30px;
 }
 
 .kategorieMenu-list > div > span {
   display: block;
-  font-size : 13px;
+  font-size: 13px;
 }
 
 .kategorieMenu-list {
@@ -88,22 +93,22 @@ input {
 
 .amountMenu {
   font-size: 20px;
-  margin-top : 30px;
+  margin-top: 30px;
 }
 
 .amountMenu > input {
   padding-left: 5px;
-  border :none;
+  border: none;
   font-size: 20px;
-  border-bottom : 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .submitButton {
-  margin-top : 30px;
-  margin-left : 460px;
+  margin-top: 30px;
+  margin-left: 460px;
   width: 100px;
   height: 30px;
-  border : 1px solid black;
-  background : none;
+  border: 1px solid black;
+  background: none;
   border-radius: 5px;
 }
