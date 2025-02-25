@@ -10,6 +10,8 @@ const New = () => {
   const nav = useNavigate();
   const onSubmit = (input) => {
     onCreate(input.createdDate.getTime(), input.emotionId, input.content);
+    // 뒤로가기 방지 : replace를 true로
+    nav("/", { replace: true });
   };
   return (
     <div>
