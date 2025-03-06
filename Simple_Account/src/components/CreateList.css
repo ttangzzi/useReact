@@ -75,20 +75,35 @@ input {
   margin: 0 0 5px 0;
 }
 
-.kategorieMenu-list > div {
-  width: 50px;
-  text-align: center;
-  font-size: 30px;
+.kategorieMenu-list {
+  display: flex;
+  gap: 20px;
+}
+
+.kategorieMenu-list > button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.kategorieMenu-list > button:hover {
+  border: 1px solid lightgray;
+}
+
+.kategorieMenu-list > button:focus {
+  border: 1px solid black;
 }
 
 .kategorieMenu-list > div > span {
   display: block;
-  font-size: 13px;
 }
 
-.kategorieMenu-list {
-  display: flex;
-  gap: 30px;
+.kategorieMenu-list .kategorieButton {
+  border: 1px solid black;
 }
 
 .amountMenu {

@@ -5,7 +5,6 @@ import History from "../components/History";
 import Total from "../components/Total";
 import { useContext } from "react";
 import { AcountStateContext } from "../App";
-import moment from "moment";
 
 const MyCalendar = () => {
   const [value, onChange] = useState(new Date());
@@ -37,11 +36,14 @@ const MyCalendar = () => {
         <Calendar
           locale="ko"
           value={value}
-          // tileContent={({ date }) => getTileContent(date)}
+          formatDay={(locale, date) =>
+            date.toLocaleString("en", { day: "numeric" })
+          }
           onChange={onChange}
           onActiveStartDateChange={onActiveStartDateChange}
         />
       </div>
+      {localStorage.setItem("date", value)}
       <History selectDate={value} />
       <Total showDate={activeDate} />
       <div style={{ clear: "both" }}></div>
