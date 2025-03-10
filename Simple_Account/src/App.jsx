@@ -11,7 +11,7 @@ const mockData = [
   {
     id: 1,
     calc: "minus", // 지출
-    kategorie: "음식",
+    kategorie: "식비",
     method: "cash",
     date: "2025-02-21",
     amount: 10000,
@@ -34,6 +34,7 @@ function reducer(state, action) {
 }
 
 export const AcountStateContext = createContext();
+export const AcountActiveContext = createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
@@ -57,12 +58,14 @@ function App() {
   return (
     <>
       <AcountStateContext.Provider value={data}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/new" element={<New />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="detail" element={<Detail />} />
-        </Routes>
+        <AcountActiveContext.Provider value={onCreate}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/new" element={<New />} />
+            <Route path="/edit" element={<Edit />} />
+            <Route path="detail" element={<Detail />} />
+          </Routes>
+        </AcountActiveContext.Provider>
       </AcountStateContext.Provider>
     </>
   );

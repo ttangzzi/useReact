@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const iconMapping = (kategorie) => {
   switch (kategorie) {
-    case "음식":
-      return "🍔";
-    case "교통":
+    case "식비":
+      return "🍎";
+    case "교통비":
       return "🚗";
     case "게임":
       return "🎮";

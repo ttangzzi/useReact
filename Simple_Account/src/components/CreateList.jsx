@@ -1,6 +1,8 @@
 import "./CreateList.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AcountActiveContext } from "../App";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 const kateData = [
   {
@@ -16,11 +18,21 @@ const kateData = [
 ];
 
 const CreateList = () => {
-  const mockDate = new Date().toISOString().split("T")[0];
   const [calc, setCalc] = useState("minus");
   const [method, setMethod] = useState("card");
   const [kategorie, setKategorie] = useState("");
   const [amount, setAmount] = useState("");
+  const nav = useNavigate();
+  const onCreate = useContext(AcountActiveContext);
+
+  const onSubmit = (calc, kategorie, method, selectDate, amount) => {
+    if (calc !== "" && kategorie !== "" && method !== "" && amount !== "") {
+      onCreate(calc, kategorie, method, selectDate, amount);
+      nav("/", { replace: true });
+    } else {
+      alert("모두 입력해주세요");
+    }
+  };
 
   const onClickCalc = (e) => {
     setCalc(e.target.value);
@@ -44,9 +56,7 @@ const CreateList = () => {
     setAmount(formattedValue);
   };
 
-  const selectDate = moment(localStorage.getItem("date")).format(
-    "YYYY년 MM월 DD일"
-  );
+  const selectDate = moment(localStorage.getItem("date")).format("YYYY-MM-DD");
 
   return (
     <div className="CreateList">
@@ -113,7 +123,12 @@ const CreateList = () => {
         <span>금액 : </span>
         <input onChange={onChangeAmount} value={amount} type="text" />
       </div>
-      <button className="submitButton">추가 완료</button>
+      <button
+        onClick={() => onSubmit(calc, kategorie, method, selectDate, amount)}
+        className="submitButton"
+      >
+        추가 완료
+      </button>
     </div>
   );
 };
