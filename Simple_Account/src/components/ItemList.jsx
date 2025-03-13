@@ -21,7 +21,7 @@ const amountUnit = (amount) =>
 const ItemList = ({ id, calc, kategorie, method, date, amount }) => {
   const nav = useNavigate();
   const onEditButton = () => {
-    nav("/edit");
+    nav(`edit/${id}`);
   };
   return (
     <div className={`ItemList ItemList_${calc}`}>

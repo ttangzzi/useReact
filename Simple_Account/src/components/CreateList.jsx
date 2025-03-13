@@ -18,6 +18,12 @@ const kateData = [
 ];
 
 const CreateList = () => {
+  // const [input, setInput] = useState({
+  //   calc : "minus",
+  //   method : "card",
+  //   kategorie : "",
+  //   amount : ""
+  // })
   const [calc, setCalc] = useState("minus");
   const [method, setMethod] = useState("card");
   const [kategorie, setKategorie] = useState("");
@@ -35,11 +41,11 @@ const CreateList = () => {
   };
 
   const onClickCalc = (e) => {
-    setCalc(e.target.value);
+    setCalc(e.currentTarget.value);
   };
 
   const onClickMethod = (e) => {
-    setMethod(e.target.value);
+    setMethod(e.currentTarget.value);
   };
 
   const onClickKategorie = (e) => {
@@ -52,7 +58,7 @@ const CreateList = () => {
   };
 
   const onChangeAmount = (e) => {
-    const formattedValue = formatAmount(e.target.value);
+    const formattedValue = formatAmount(e.currentTarget.value);
     setAmount(formattedValue);
   };
 
@@ -60,7 +66,6 @@ const CreateList = () => {
 
   return (
     <div className="CreateList">
-      <div className="title">가계부 추가하기</div>
       <div className="dateMenu">
         <span>날짜 : {selectDate}</span>
       </div>

@@ -13,7 +13,7 @@ const mockData = [
     calc: "minus", // 지출
     kategorie: "식비",
     method: "cash",
-    date: "2025-02-21",
+    date: "2025-03-13",
     amount: 10000,
   },
   {
@@ -21,7 +21,7 @@ const mockData = [
     calc: "plus", // 수입
     kategorie: "게임",
     method: "card",
-    date: "2025-02-20",
+    date: "2025-03-14",
     amount: 10000,
   },
 ];
@@ -62,7 +62,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/new" element={<New />} />
-            <Route path="/edit" element={<Edit />} />
+            <Route path="/edit/:id" element={<Edit />} />
             <Route path="detail" element={<Detail />} />
           </Routes>
         </AcountActiveContext.Provider>
